@@ -91,8 +91,10 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-//const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
-
+const myStrongest  = monstersInYourPocket.filter(function(object){
+  return object.CP>200
+})
+console.log(myStrongest)
 
 
 ////////// PROBLEM 5 //////////
@@ -105,10 +107,18 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 // Do not edit code above.
 
 /*
-  Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
+  Use a higher order method to get all the order totals after adding in the sales tax 
+  (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers,
+   one total for each order.
 */
 
 // CODE HERE
+const totals = orders.map(function(object){
+  return object.price*=1+object.tax
+})
+console.log(totals)
+
+
 
 
 
@@ -129,3 +139,17 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+const ownerBob = purchases.filter(function(object){
+  return object.owner==="Bob"
+})
+
+
+console.log(ownerBob)
+
+
+const sumOfBobsPrices = ownerBob.reduce(function(acc,curr,index,objects){
+  curr = objects[index].price
+  curr = parseInt(curr)
+  return acc + curr
+})
+console.log (sumOfBobsPrices)
