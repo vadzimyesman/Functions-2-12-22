@@ -147,9 +147,9 @@ const ownerBob = purchases.filter(function(object){
 console.log(ownerBob)
 
 
-const sumOfBobsPrices = ownerBob.reduce(function(acc,curr,index,objects){
-  curr = objects[index].price
-  curr = parseInt(curr)
-  return acc + curr
-})
+
+const sumOfBobsPrices = ownerBob.reduce(function(acc,curr){
+ 
+  return acc + curr.price
+},0)
 console.log (sumOfBobsPrices)
