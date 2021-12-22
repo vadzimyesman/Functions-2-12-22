@@ -4,8 +4,13 @@
   Write a function called multiply that takes in three parameters: two numbers and a callback function.  
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
+const multiply = (num1,num2,callback=(num1,num2)=>num1*num2)=>callback(num1,num2)
 
-// CODE HERE
+console.log(multiply(11,4))
+
+
+  
+
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -36,7 +41,8 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const first =(array,callback=(array)=>array[0])=>callback(array)
+console.log(first(names))
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -55,9 +61,11 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
+
 // CODE HERE
+const last = (array,callback=(array)=>array[array.length-1])=>callback(array)
 
-
+console.log(last(names))
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
@@ -78,6 +86,15 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
+var name = "Tylor"
+const contains = (array,name,callback=(array)=>{
+  if (array.includes(name)){
+    return true
+  } else {
+    return false
+  }
+})
+console.log(contains (names,"Colt"))
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
